@@ -1,0 +1,95 @@
+.head {
+	height: 50px;
+	background: linear-gradient(to right, #fae, #fee);
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.logo {
+	grid-column: 3/11;
+	text-align: center;
+	color: #959;
+	padding: 10px 0;
+	line-height: 30px;
+	letter-spacing: .1em;
+	font-size: 2em;
+}
+
+.menu {
+	grid-column: 11/-1;
+	border-left: 1px solid white;
+	text-align: center;
+}
+
+.placeholder {
+	grid-area: h;
+	border-left: 1px solid white;
+	text-align: center;
+	border: 1px dotted blue;
+}
+
+.hamburger {
+  width: 40px;
+  height: 30px;
+  margin: auto;
+  cursor: pointer;
+  padding-top: 12px;
+}
+
+/*.hamburger-line:nth-child(1) {
+  --width: 71px;
+  --top: 22px;
+  --left: 8px;
+  --rotate: 45deg;
+}
+
+.hamburger-line:nth-child(2) {
+  --width: 0px;
+  --top: 0px;
+  --left: 0;
+  --rotate: 0;
+}
+
+.hamburger-line:nth-child(3) {
+  --width: 71px;
+  --top: -24px;
+  --left: 8px;
+  --rotate: -45deg;
+}*/
+
+.hamburger-line {
+  height: 4px;
+  width: 100%;
+  margin-bottom: 8px;
+  border-radius: 2px;
+  background: #959;
+  z-index: 999;
+}
+
+.hamburger-line:last-of-type {
+  margin-bottom: none;
+}
+
+/*.forward-animation {
+  animation: click .8s ease-out 0 1 normal forwards paused
+}
+
+.reverse-animation {
+  animation: click .8s ease-out 0 1 reverse forwards paused
+}
+
+@keyframes click {
+  50% {
+    width: 6px;
+    transform: rotate(0deg) translate(0,0);
+  }
+  51% {
+    width: 6px;
+    transform: rotate(var(--rotate)) translate(0,0);
+  }
+  100% {
+    width: var(--width);
+    transform: rotate(var(--rotate)) translate(var(--left),var(--top));
+  }
+}*/
+
