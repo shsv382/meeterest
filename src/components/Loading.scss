@@ -1,6 +1,6 @@
 @keyframes colorize {
 	to {
-    transform: rotate(700deg) scale(2);
+    transform: rotate(700deg) scale(1.5);
     opacity: .5;
 		/* background: linear-gradient(to bottom right, #eaf, red);
 		transform: scale(2); */
@@ -21,4 +21,10 @@
 	animation-timing-function: ease-out;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
+	&:first-of-type {
+		left: calc(50vw - 135px);
+	}
+	&:last-of-type {
+		left: calc(50vw + 85px);
+	}
 }

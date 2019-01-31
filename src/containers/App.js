@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import './App.css';
 
 import Loading from '../components/Loading';
-import Header from '../components/Header'
+import Header from '../components/Header';
+import StartPage from '../components/StartPage';
 
 class App extends Component {
   componentDidMount() {
@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Loading />
+        <StartPage />
       </div>
     );
   }
