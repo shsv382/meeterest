@@ -9,9 +9,13 @@ class Header extends React.Component {
 		    line.style.animationPlayState = "running";
 		    line.onanimationend = () => {
 				line.style.animationPlayState = "paused";
-			    line.classList.toggle("reverse-animation");
 		    }
-		});	
+		});
+		let nav = document.querySelector("nav");
+		nav.style.animationPlayState = "running";
+	    nav.onanimationend = () => {
+			nav.style.animationPlayState = "paused";
+	    }
 	}
 
 	animationIterationHandler(e) {
@@ -24,13 +28,19 @@ class Header extends React.Component {
 		return (
 			<header className="head">
 				<div className='logo'>Meeterest</div>
-				<div className='menu' onClick={this.menuExpand.bind(this)}>
+				<div className='open-menu' onClick={this.menuExpand.bind(this)}>
 					<div className="hamburger">
 				      <div className="hamburger-line forward-animation" onAnimationIteration={this.animationIterationHandler.bind(this)}></div>
 				      <div className="hamburger-line forward-animation" onAnimationIteration={this.animationIterationHandler.bind(this)}></div>
 				      <div className="hamburger-line forward-animation" onAnimationIteration={this.animationIterationHandler.bind(this)}></div>
 				    </div>
 				</div>
+				<nav onAnimationIteration={this.animationIterationHandler.bind(this)}>
+					<div class="nav-button">Home</div>
+					<div class="nav-button">Help</div>
+					<div class="nav-button">About</div>
+					<div class="nav-button">Lang</div>
+				</nav>
 			</header>
 		);
 	}

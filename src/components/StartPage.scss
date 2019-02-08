@@ -18,16 +18,20 @@
 		font-size: 1.7em;
 		margin: 16px auto;
 	}
-	& input[type='text'], a {
+	& input[type='text'], a.action-anchor {
 		height: 40px;
 		padding: 10px 20px;
 		border-radius: 20px;
-		border: 1px solid #737;
+		border: 1px solid #cac;
 		font-size: 1em;
 		color: #737;
 		margin: 16px auto;
+		&:focus {
+			outline: none;
+			border-color: #737;
+		}
 	}
-	& a {
+	& a.action-anchor {
 		display: block;
 		border: none;
 		box-shadow: 0px 1px 3px 3px rgba(0,0,0,.05);
@@ -72,7 +76,7 @@
 
 .form-primary {
 	position: relative;
-	opacity: 0;
+	opacity: 0.33;
 	top: 30px;
 
 	animation-name: fadeIn;
@@ -89,6 +93,6 @@
 	position: relative;
 	opacity: 0;
 	top: 30px;
-
 	display: none;
 }
+

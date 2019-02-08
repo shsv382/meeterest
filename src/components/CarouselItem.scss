@@ -1,0 +1,75 @@
+
+@keyframes slideUp {
+  from {
+    top: 100%;
+    opacity: 0.33;
+  }
+  to {
+    top: 0em;
+    opacity: var(--opacity);
+    font-size: var(--font-size);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    top: -100%;
+    opacity: 0.33;
+  }
+  to {
+    top: 0em;
+    opacity: var(--opacity);
+  }
+}
+
+.category-carousel li {
+  list-style-type: none;
+  height: 2.5em;
+  width: 90%;
+  margin: auto;
+  text-align: center;/*
+  overflow: hidden;*/
+  display: none;
+  &:last-of-type {
+    overflow: hidden;
+  }
+}
+
+.category-carousel li.carousel-main-item {
+  display: block;
+  height: 3.2em;
+}
+
+.category-carousel li.carousel-sibling-item {
+  display: block;
+}
+
+.category-carousel li a {
+  color: #737;
+  text-decoration: none;
+  font-size: 2.2em;
+  position: relative;
+  top: -1.2em;
+  opacity: 0;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.category-carousel .carousel-main-item a {
+  --opacity: 1;
+  --starter-opacity: 0.5;
+  --font-size: 2.8em;
+  animation-name: slideUp;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+.category-carousel .carousel-sibling-item a {
+  --opacity: 0.5; 
+  --starter-opacity: 0.33;
+  --font-size: 2.2em;
+  animation-name:slideUp;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}

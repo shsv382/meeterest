@@ -1,13 +1,11 @@
 import React from 'react';
 import './StartPage.scss';
 
+import CarouselList from './CarouselList';
+
 class StartPage extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			selfGender: "male",
-			findingGender: "female"
-		}
 		this.findCoupleClick = this.findCoupleClick.bind(this);
 	}
 
@@ -22,26 +20,31 @@ class StartPage extends React.Component {
 		setGender.classList.toggle("form-secondary");
 	}
 
+	shouldComponentUpdate(nextProps, nextState) {
+		return this.props !== nextProps;
+	}
+
 	render() {
 		return (
-			<div className="container">
+			<React.Fragment>
 				<form className="find-couple-form">
-					<div className="form-primary find-couple">
+					<CarouselList />
+					<div className="form-secondary find-couple">
 						<h3>I'd be glad to...</h3>
 						<input type="text" placeholder="go to the cinema" />
-						<a href="#" onClick={this.findCoupleClick}>Find a couple</a>
+						<a href="#" className="action-anchor" onClick={this.findCoupleClick}>Find a couple</a>
 					</div>
 					<div className="form-secondary set-gender">
-						<div className="set-gender-description">I'm {this.state.selfGender}</div>
+						<div className="set-gender-description">I'm {this.props.selfGender}</div>
+						<div className="set-gender-icon" data-gender="male" onClick={this.props.setSelfGender}><span></span></div>
+						<div className="set-gender-icon" data-gender="female" onClick={this.props.setSelfGender}><span></span></div>
+						<div className="set-gender-description">find {this.props.findingGender}</div>
 						<div className="set-gender-icon"><span></span></div>
 						<div className="set-gender-icon"><span></span></div>
-						<div className="set-gender-description">find {this.state.findingGender}</div>
-						<div className="set-gender-icon"><span></span></div>
-						<div className="set-gender-icon"><span></span></div>
-						<a href="#" className="show-candidates">Show candidates</a>
+						<a href="#" className="action-anchor" className="show-candidates">Show candidates</a>
 					</div>
 				</form>
-			</div>
+			</React.Fragment>
 		)
 	}
 }
