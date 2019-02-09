@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Meeterest",
+  "name": "Meeterest",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,11 +9,11 @@
     },
     {
       "src": "meeterest.png",
-      "sizes": "512x512 300x300 192x192 96x96",
+      "sizes": "512x512 192x192",
       "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
